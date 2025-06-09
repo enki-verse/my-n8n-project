@@ -1,13 +1,23 @@
 {
-  "name": "venice-embeddings",
+  "name": "n8n-nodes-venice-embeddings",
   "version": "1.0.0",
-  "description": "n8n custom node for Venice Embeddings integration",
+  "description": "Venice AI embeddings node for n8n",
   "main": "index.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "n8n": {
+    "credentials": [
+      "dist/credentials/VeniceApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/VeniceEmbeddings/VeniceEmbeddings.node.js"
+    ]
   },
   "dependencies": {
-    "n8n-nodes-base": "^0.1.0"
+    "n8n-core": "^1.0.0",
+    "n8n-workflow": "^1.0.0"
   },
   "devDependencies": {
     "typescript": "^4.0.0"
