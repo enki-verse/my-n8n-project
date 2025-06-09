@@ -1,0 +1,10 @@
+{
+  "name": "my-n8n-project",
+  "version": "1.0.0",
+  "description": "Custom n8n project with Venice Embeddings integration",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {}
+}

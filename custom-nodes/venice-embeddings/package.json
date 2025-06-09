@@ -1,0 +1,15 @@
+{
+  "name": "venice-embeddings",
+  "version": "1.0.0",
+  "description": "n8n custom node for Venice Embeddings integration",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "n8n-nodes-base": "^0.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.0"
+  }
+}
