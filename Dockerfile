@@ -3,6 +3,9 @@ FROM n8nio/n8n:latest
 # Switch to root to install packages
 USER root
 
+# Install Node.js and npm
+RUN apt-get update && apt-get install -y nodejs npm
+
 # Copy custom node directory
 COPY custom-nodes/venice-embeddings /custom-nodes/venice-embeddings
 

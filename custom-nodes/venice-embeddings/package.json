@@ -15,10 +15,7 @@
       "dist/nodes/VeniceEmbeddings/VeniceEmbeddings.node.js"
     ]
   },
-  "dependencies": {
-    "n8n-core": "^1.0.0",
-    "n8n-workflow": "^1.0.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "typescript": "^4.0.0"
   }

@@ -1,9 +1,9 @@
-import { IExecuteFunctions } from 'n8n-core';
 import {
     INodeExecutionData,
     INodeType,
     INodeTypeDescription,
     NodeOperationError,
+    getExecuteFunctions,
 } from 'n8n-workflow';
 
 export class VeniceEmbeddings implements INodeType {
@@ -17,8 +17,8 @@ export class VeniceEmbeddings implements INodeType {
         defaults: {
             name: 'Venice Embeddings',
         },
-        inputs: ['main'],
-        outputs: ['main'],
+        inputs: [{ type: 'main' } as const],
+        outputs: [{ type: 'main' } as const],
         credentials: [
             {
                 name: 'veniceApi',
@@ -65,7 +65,7 @@ export class VeniceEmbeddings implements INodeType {
         ],
     };
 
-    async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
+    async execute(this: ReturnType<typeof getExecuteFunctions>): Promise<INodeExecutionData[][]> {
         const items = this.getInputData();
         const returnData: INodeExecutionData[] = [];
 
@@ -120,7 +120,7 @@ export class VeniceEmbeddings implements INodeType {
                     returnData.push({
                         json: {
                             ...items[i].json,
-                            error: error instanceof Error ? error.message : 'Unknown error',
+                            error: (error as Error).message,
                         },
                     });
                     continue;
